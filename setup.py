@@ -7,4 +7,8 @@ setup(
     author="Alex Plate",
     author_email="AlexPl292@gmail.com",
     url="https://github.com/AlexPl292/rew",
+    py_modules=['rew'],
+    entry_points={
+        'console_scripts': ['rew=rew:main'],
+    },
 )
