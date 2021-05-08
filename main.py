@@ -24,11 +24,24 @@ def main():
         package = command[2]
         if len(package) > 0:
             add_to_brew("tap \"" + package + "\"")
+    elif command[1] in ["remove", "rm", "uninstall"] and len(command) > 2:
+        package = command[2]
+        if len(package) > 0:
+            remove_from_brew("brew \"" + package + "\"")
 
 
 def add_to_brew(data):
     with open(str(Path.home()) + "/Brewfile", "a") as brewfile:
         brewfile.write(data + "\n")
+
+
+def remove_from_brew(data):
+    with open(str(Path.home()) + "/Brewfile", "r") as f:
+        lines = f.readlines()
+    with open(str(Path.home()) + "/Brewfile", "w") as f:
+        for line in lines:
+            if data not in line.strip("\n"):
+                f.write(line)
 
 
 if __name__ == '__main__':
