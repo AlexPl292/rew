@@ -4,7 +4,10 @@ Keep your Brewfile up-to-date
 
 ## Installation
 
-Coming soon...
+```
+brew tap AlexPl292/rew
+brew install rew
+```
 
 ## Usage/Examples
 
